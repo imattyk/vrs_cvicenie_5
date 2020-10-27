@@ -207,9 +207,10 @@ void EXTI3_IRQHandler(void)
   /* USER CODE END EXTI3_IRQn 0 */
   if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_3) != RESET)
   {
+	    LL_GPIO_TogglePin(GPIOB, LL_GPIO_PIN_3);
+	    LL_mDelay(200);
     LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_3);
-    LL_GPIO_TogglePin(GPIOB, LL_GPIO_PIN_3);
-    LL_mDelay(200);
+
     /* USER CODE BEGIN LL_EXTI_LINE_3 */
 
     /* USER CODE END LL_EXTI_LINE_3 */
